@@ -103,5 +103,50 @@
 // console.log(calculator.mul());
 
 
-
+// --------------------------------------------------------------------------------------------------
+// Приклад об'єкта
+const person = {
+    name: "Max",
+    age: 25,
+    job: "Developer"
+  };
+  
+  // Object.keys() - повертає масив ключів
+  console.log(Object.keys(person)); // ["name", "age", "job"]
+  
+  // Object.values() - повертає масив значень
+  console.log(Object.values(person)); // ["Max", 25, "Developer"]
+  
+  // Object.entries() - повертає масив пар ключ-значення
+  console.log(Object.entries(person)); 
+  // [["name", "Max"], ["age", 25], ["job", "Developer"]]
+  
+  // Object.hasOwn() - перевіряє чи властивість є ВЛАСНОЮ (не з прототипу)
+  console.log(Object.hasOwn(person, "name")); // true
+  console.log(Object.hasOwn(person, "toString")); // false
+  
+  // Object.assign() - копіює властивості
+  const copiedPerson = Object.assign({}, person);
+  console.log(copiedPerson); // { name: "Max", age: 25, job: "Developer" }
+  
+  // Object.freeze() - заморожує об'єкт
+  Object.freeze(person);
+  person.age = 30; // НЕ зміниться, бо об'єкт заморожений
+  console.log(person.age); // 25
+  
+  // Object.seal() - забороняє додавати/видаляти властивості, але дозволяє змінювати існуючі
+  const car = { brand: "Toyota", year: 2020 };
+  Object.seal(car);
+  car.year = 2021; // Можна змінити
+  car.model = "Corolla"; // НЕ додасться
+  console.log(car); // { brand: "Toyota", year: 2021 }
+  
+  // Object.create() - створює новий об'єкт з певним прототипом
+  const proto = { greet() { console.log("Hello"); } };
+  const user = Object.create(proto);
+  user.name = "Anna";
+  user.greet(); // Hello
+  
+  // Object.getPrototypeOf() - отримує прототип об'єкта
+  console.log(Object.getPrototypeOf(user)); // { greet: [Function: greet] }
 
