@@ -187,3 +187,8 @@
 // const resolt = products.filter(product =>product.price <100)
 //                        .map(product => product.name)
 //                        .sort();
+
+// деструктиризація масива 
+// let array = [1,5,2,5];
+// let [a,b,c,d] = [1,5,2,5];
+// console.log(a,b,c,d)
